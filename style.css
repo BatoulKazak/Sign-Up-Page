@@ -1,0 +1,227 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-colour: #ff2352;
+    --background-colour: #FFF;
+    --fore-colour: #222;
+    --half-transparent: #0000007C;
+
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Consolas;
+
+    color: black;
+    min-height: 100vh;
+
+    margin: 0;
+
+    background-color: var(--background-colour);
+
+    display: flex;
+    place-content: center;
+    place-items: center;
+
+    padding: 0 4rem;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: -10rem;
+    background-image: url('images/image_2023-04-04_13-36-08.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(2rem);
+    z-index: -1;
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+p,
+h1 {
+    margin: 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    place-content: center;
+    place-items: center;
+
+    border-radius: 1rem;
+
+    overflow: hidden;
+}
+
+form figure {
+    background-image: url('images/image_2023-04-04_13-36-08.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+form main {
+    --padding: 3rem;
+
+    padding: var(--padding);
+    background-color: white;
+    width: calc(100% - var(--padding) * 2);
+
+    display: flex;
+    flex-direction: column;
+    place-content: space-around;
+    gap: 1.5rem;
+
+}
+
+form main header {
+    justify-self: start;
+    margin-bottom: -1.5rem;
+}
+
+form main header p {
+    color: gray;
+}
+
+form main #input-container>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    margin-top: 3rem;
+}
+
+#input-container input {
+    border: none;
+    border-bottom: 0.2rem solid var(--main-colour);
+    padding: 0.5rem;
+}
+
+#input-container>div label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    color: gray;
+    transition: 500ms top;
+    pointer-events: none;
+}
+
+#input-container>div input:is(:focus, :not(:placeholder-shown))+label {
+    top: -50%;
+}
+
+#input-container>div .check-mark {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    transform: translateY(-50%);
+    width: 2rem;
+    aspect-ratio: 1;
+
+    background-color: rgb(110, 255, 110);
+    color: white;
+    border-radius: 100%;
+
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+}
+
+#input-container>div .check-mark::after {
+    content: "✓";
+}
+
+#input-container input:invalid~.check-mark {
+    background-color: rgb(255, 125, 136);
+}
+
+#input-container input:invalid~.check-mark::after {
+    content: "✖";
+}
+
+form main #terms-checkbox input[type=checkbox] {
+    display: none;
+}
+
+form main #terms-checkbox label {
+    position: relative;
+    font-size: smaller;
+}
+
+form main #terms-checkbox label a {
+    color: var(--main-colour);
+    font-weight: bold;
+}
+
+form main #terms-checkbox label::before,
+form main #terms-checkbox label::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.8rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+form main #terms-checkbox label::before {
+    border: 0.2rem solid var(--main-colour);
+    box-sizing: border-box;
+    border-radius: 0.4rem;
+    transition: 500ms background-color;
+}
+
+form main #terms-checkbox input:checked+label::before {
+    background-color: var(--main-colour);
+}
+
+form main #terms-checkbox input:checked+label::after {
+    content: "✓";
+    display: flex;
+    place-content: center;
+    place-items: center;
+
+    color: white;
+    font-size: smaller;
+}
+
+form main button {
+    border: none;
+    background-color: var(--main-colour);
+    padding: 1rem;
+    border-radius: 100vh;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form main #already-sign-in {
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+    gap: 1ch;
+    font-size: smaller;
+}
+
+form main #already-sign-in a {
+    text-decoration: none;
+    color: var(--main-colour);
+    font-weight: bold;
+}

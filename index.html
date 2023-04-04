@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document Title</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+
+    <form action="" method="post">
+        <figure></figure>
+
+        <main>
+            <header>
+                <h1>Welcome to our Website</h1>
+                <p>Come on and creat an account</p>
+            </header>
+
+            <div id="input-container">
+                <div>
+                    <input type="text" id="full-name" placeholder="" />
+                    <label>Full name</label>
+                    <div class="check-mark"></div>
+                </div>
+                <div>
+                    <input type="text" id="username" placeholder="" required />
+                    <label>Username</label>
+                    <div class="check-mark"></div>
+                </div>
+                <div>
+                    <input type="email" id="email" placeholder="" required />
+                    <label>Email</label>
+                    <div class="check-mark"></div>
+                </div>
+                <div>
+                    <input type="password" id="password" placeholder="" required minlength="8" />
+                    <label>Password</label>
+                    <div class="check-mark"></div>
+                </div>
+                <div>
+                    <input type="password" id="confirm-password" placeholder="" required minlength="8" />
+                    <label>Confirm Password</label>
+                    <div class="check-mark"></div>
+                </div>
+            </div>
+
+            <div id="terms-checkbox">
+                <input type="checkbox" id="term-input">
+                <label for="term-input">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I
+                    agree with the website's
+                    <a href="">terms and conditions</a>
+                </label>
+            </div>
+
+            <button type="submit" id="sign-up-button">Sign up</button>
+
+            <div id="already-sign-in">
+                <p>Already a member?</p>
+                <a href="">Sign in</a>
+            </div>
+        </main>
+    </form>
+
+</body>
+
+</html>
